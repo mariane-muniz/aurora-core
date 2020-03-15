@@ -21,7 +21,7 @@ public class ApplicationUser implements AbstractEntity {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "varchar(255) default 'username'")
     @NotNull(message = "The field 'username' is mandatory")
     private String username;
 
@@ -30,9 +30,9 @@ public class ApplicationUser implements AbstractEntity {
     @NotNull(message = "The field 'username' is mandatory")
     private String password;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "varchar(255) default 'ADMIN'")
     @NotNull(message = "The field 'username' is mandatory")
-    private String role = "USER";
+    private String role;
 
     public ApplicationUser(@NotNull ApplicationUser applicationUser) {
         this.username = applicationUser.getUsername();
