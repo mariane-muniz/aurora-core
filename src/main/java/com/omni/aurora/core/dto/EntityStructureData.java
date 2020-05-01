@@ -10,5 +10,6 @@ import java.util.List;
 public class EntityStructureData {
     private String name;
     private String code;
+    private Long version;
     private List<EntityStructureEntryData> entries;
 }

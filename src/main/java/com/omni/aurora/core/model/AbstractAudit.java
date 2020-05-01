@@ -35,6 +35,10 @@ public abstract class AbstractAudit implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 255, nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String code;
+
+    public long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 }
