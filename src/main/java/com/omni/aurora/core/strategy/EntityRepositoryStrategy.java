@@ -14,11 +14,11 @@ import java.util.Optional;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class EntityRepositoryStrategy {
 
-    private final static String MODEL_PACKAGE = "com.store.catalog.models.";
+    private final static String REPOSITORY_PACKAGE = "com.store.catalog.models.";
     private final Repositories repositories;
 
     public Optional<Object> findRepository(final String entityCode) throws ClassNotFoundException {
-        final String entityName = MODEL_PACKAGE + StringUtils.capitalize(entityCode);
+        final String entityName = REPOSITORY_PACKAGE + StringUtils.capitalize(entityCode);
         final Class<?> type = Class.forName(entityName);
         return this.repositories.getRepositoryFor(type);
     }
